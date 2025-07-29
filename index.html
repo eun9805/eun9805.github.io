@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Playlist</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: #131212;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page-full-wrap {
+            width: 95%;
+            max-width: 1100px;
+            margin-top: 24px;
+            padding-bottom: 100px;
+        }
+
+        .page-item-wrap {
+            position: relative;
+            margin: 16px 0;
+            transition: transform .15s cubic-bezier(.17,.67,.29,2.71) 0s;
+            border-radius: 8px;
+        }
+
+        .page-item-wrap:hover {
+            transform: scale(1.015);
+        }
+
+        .page-item {
+            box-sizing: border-box;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+            border: 0px solid transparent;
+            background: #212121;
+            border-radius: 8px;
+            box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .page-item-each {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            min-height: 55px;
+            text-decoration: none;
+            box-sizing: border-box;
+            z-index: 10;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+            overflow: hidden; /* 내용이 넘칠 경우 숨김 */
+            text-overflow: ellipsis; /* 내용이 넘칠 경우 ...으로 표시 */
+        }
+    </style>
+</head>
+<body>
+    <div class="page-full-wrap">
+        <div>
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFtPrkXdtCM5DACLufB9jbsA">
+                    <span>MrBallen</span>
+                </a>
+            </div>
+
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFODHrzPMGbNv67e84WDZhQQ">
+                    <span>fern</span>
+                </a>
+            </div>
+
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFiciOsypkXcqSFqSPd-NRVA">
+                    <span>Kallmekris</span>
+                </a>
+            </div>
+
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFAAylaLTtNL8SGuB-Oj3xCw">
+                    <span>The Villains</span>
+                </a>
+            </div>
+
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFJWKjrrUh2KL1d3zXQW79cQ">
+                    <span>EXPLORE WITH US</span>
+                </a>
+            </div>
+
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFHnyfMqiRRG1u-2MsSQLbXA">
+                    <span>Veritasium</span>
+                </a>
+            </div>
+
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFsXVk37bltHxD1rDPwtNM8Q">
+                    <span>Kurzgesagt – In a Nutshell</span>
+                </a>
+            </div>
+
+            <div class="page-item-wrap">
+                <div class="page-item"></div>
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFsooa4yRKGN_zEE8iknghZA">
+                    <span>TED-Ed</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
