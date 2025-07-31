@@ -30,24 +30,28 @@
             margin: 16px 0;
             transition: transform .15s cubic-bezier(.17,.67,.29,2.71) 0s;
             border-radius: 8px;
+            display: flex;
+            align-items: center;
+            background: #212121;
+            box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.05);
         }
 
         .page-item-wrap:hover {
             transform: scale(1.015);
         }
 
-        .page-item {
+        .page-item-input {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 10px 15px;
+            min-height: 55px;
             box-sizing: border-box;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: -1;
-            border: 0px solid transparent;
-            background: #212121;
-            border-radius: 8px;
-            box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.05);
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            min-width: 0; /* Flex 아이템의 크기가 줄어들 수 있도록 설정 */
         }
 
         .page-item-each {
@@ -63,10 +67,14 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-
-            white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
-            overflow: hidden; /* 내용이 넘칠 경우 숨김 */
-            text-overflow: ellipsis; /* 내용이 넘칠 경우 ...으로 표시 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-left: 1px solid #444;
+            
+            /* --- 수정된 부분 --- */
+            width: 250px;       /* 버튼의 너비를 250px로 고정 */
+            flex-shrink: 0;   /* 버튼의 크기가 줄어들지 않도록 설정 */
         }
     </style>
 </head>
@@ -74,61 +82,96 @@
     <div class="page-full-wrap">
         <div>
             <div class="page-item-wrap">
-                <div class="page-item"></div>
-                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/watch?v=NMQ6qTht1bo&list=UULFtPrkXdtCM5DACLufB9jbsA">
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
+                <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFtPrkXdtCM5DACLufB9jbsA">
                     <span>MrBallen</span>
                 </a>
             </div>
 
             <div class="page-item-wrap">
-                <div class="page-item"></div>
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
                 <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFODHrzPMGbNv67e84WDZhQQ">
                     <span>fern</span>
                 </a>
             </div>
 
             <div class="page-item-wrap">
-                <div class="page-item"></div>
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
                 <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFiciOsypkXcqSFqSPd-NRVA">
                     <span>Kallmekris</span>
                 </a>
             </div>
 
             <div class="page-item-wrap">
-                <div class="page-item"></div>
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
                 <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFAAylaLTtNL8SGuB-Oj3xCw">
                     <span>The Villains</span>
                 </a>
             </div>
 
             <div class="page-item-wrap">
-                <div class="page-item"></div>
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
                 <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFJWKjrrUh2KL1d3zXQW79cQ">
                     <span>EXPLORE WITH US</span>
                 </a>
             </div>
 
             <div class="page-item-wrap">
-                <div class="page-item"></div>
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
                 <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFHnyfMqiRRG1u-2MsSQLbXA">
                     <span>Veritasium</span>
                 </a>
             </div>
 
             <div class="page-item-wrap">
-                <div class="page-item"></div>
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
                 <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFsXVk37bltHxD1rDPwtNM8Q">
                     <span>Kurzgesagt – In a Nutshell</span>
                 </a>
             </div>
 
             <div class="page-item-wrap">
-                <div class="page-item"></div>
+                <input type="text" class="page-item-input" placeholder="Enter text or URL to search...">
                 <a target="_blank" rel="noopener nofollow" class="page-item-each" href="https://www.youtube.com/playlist?list=UULFsooa4yRKGN_zEE8iknghZA">
                     <span>TED-Ed</span>
                 </a>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const itemWraps = document.querySelectorAll('.page-item-wrap');
+
+            itemWraps.forEach(wrap => {
+                const input = wrap.querySelector('.page-item-input');
+                const link = wrap.querySelector('.page-item-each');
+                const originalHref = link.href;
+
+                input.addEventListener('input', function() {
+                    const inputValue = this.value.trim();
+
+                    if (inputValue !== '') {
+                        let searchQuery = inputValue;
+
+                        // 입력값이 URL 형식인지 확인하고, 그렇다면 ID를 추출합니다.
+                        if (inputValue.startsWith('https://youtu.be/')) {
+                            searchQuery = inputValue.substring(inputValue.lastIndexOf('/') + 1);
+                        }
+                        
+                        // 원래 href에서 재생목록 ID를 추출합니다.
+                        const listId = originalHref.substring(originalHref.lastIndexOf('/') + 1);
+                        
+                        // 최종 검색어(일반 텍스트 또는 추출된 ID)와 재생목록 ID를 사용하여 새 URL을 만듭니다.
+                        link.href = `https://www.youtube.com/watch?v=${encodeURIComponent(searchQuery)}&list=${listId}`;
+
+                    } else {
+                        // 입력창이 비워지면 원래의 href로 되돌립니다.
+                        link.href = originalHref;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
