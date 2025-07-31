@@ -6,78 +6,75 @@
     <title>Playlist</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        body, html {
+        /* 기본 스타일 & 블랙 테마 */
+        body {
+            background-color: #121212; /* 어두운 배경색 */
+            color: #E0E0E0; /* 밝은 텍스트 색상 */
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background: #131212;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        /* 전체 페이지 컨테이너 */
         .page-full-wrap {
-            width: 95%;
-            max-width: 900px;
-            margin-top: 12px;
-            padding-bottom: 100px;
+            max-width: 600px; /* 스마트폰 화면에 적합한 최대 너비 */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
+        /* 각 플레이리스트 아이템 컨테이너 */
         .page-item-wrap {
-            position: relative;
-            margin: 16px 0;
-            transition: transform .15s cubic-bezier(.17,.67,.29,2.71) 0s;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            background: #212121;
-            box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1), inset 0px 0px 2px 1px rgba(255, 255, 255, 0.05);
+            background-color: #1E1E1E; /* 아이템 배경색 */
+            border-radius: 12px; /* 둥근 모서리 */
+            margin-bottom: 16px; /* 아이템 간의 간격 */
+            overflow: hidden; /* 모서리 밖으로 나가는 내용 숨기기 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .page-item-wrap:hover {
-            transform: scale(1.015);
-        }
-
+        /* ID 또는 URL 입력창 */
         .page-item-input {
-            flex-grow: 1;
-            background: transparent;
+            width: 100%;
+            background-color: #2C2C2C;
+            color: #FFFFFF;
             border: none;
-            color: #ffffff;
+            padding: 14px 16px;
             font-size: 16px;
-            padding: 10px 15px;
-            min-height: 55px;
             box-sizing: border-box;
-            outline: none;
-            font-family: 'Inter', sans-serif;
-            min-width: 0; /* Flex 아이템의 크기가 줄어들 수 있도록 설정 */
-        }
-        
-        .page-item-input::placeholder {
-            color: #888; /* 플레이스홀더 색상 (선택 사항) */
-            text-align: center; /* 플레이스홀더 텍스트 가운데 정렬 */
+            border-bottom: 1px solid #333333; /* 링크와 구분선 */
         }
 
+        .page-item-input::placeholder {
+            color: #888888;
+        }
+
+        .page-item-input:focus {
+            outline: none;
+            background-color: #333333;
+        }
+
+        /* 채널명 링크 */
         .page-item-each {
-            color: #ffffff;
-            font-size: 16px;
+            display: block; /* 링크 영역을 블록으로 만들어 전체 클릭 가능 */
+            padding: 16px;
+            text-decoration: none; /* 밑줄 제거 */
+            color: #FFFFFF;
+            font-size: 18px;
             font-weight: 600;
-            min-height: 55px;
-            text-decoration: none;
-            box-sizing: border-box;
-            z-index: 10;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            border-left: 1px solid #444;
-            width: 250px;       /* 버튼의 너비를 250px로 고정 */
-            flex-shrink: 0;   /* 버튼의 크기가 줄어들지 않도록 설정 */
+            transition: background-color 0.2s ease-in-out; /* 부드러운 색상 변경 효과 */
+        }
+
+        .page-item-each:hover,
+        .page-item-each:active {
+            background-color: #333333; /* 클릭 또는 마우스 오버 시 배경색 변경 */
+        }
+
+        .page-item-each span {
+            display: block;
         }
     </style>
 </head>
