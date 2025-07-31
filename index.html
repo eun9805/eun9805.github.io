@@ -23,17 +23,17 @@
         .page-full-wrap {
             max-width: 600px; /* 스마트폰 화면에 적합한 최대 너비 */
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px; /* 전체적인 상하좌우 여백 축소 */
             box-sizing: border-box;
         }
 
         /* 각 플레이리스트 아이템 컨테이너 */
         .page-item-wrap {
             background-color: #1E1E1E; /* 아이템 배경색 */
-            border-radius: 12px; /* 둥근 모서리 */
-            margin-bottom: 16px; /* 아이템 간의 간격 */
+            border-radius: 10px; /* 둥근 모서리 약간 축소 */
+            margin-bottom: 12px; /* 아이템 간의 간격 축소 */
             overflow: hidden; /* 모서리 밖으로 나가는 내용 숨기기 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         /* ID 또는 URL 입력창 */
@@ -42,8 +42,8 @@
             background-color: #2C2C2C;
             color: #FFFFFF;
             border: none;
-            padding: 14px 16px;
-            font-size: 16px;
+            padding: 12px 15px; /* 상하 여백 축소 */
+            font-size: 15px; /* 글자 크기 약간 축소 */
             box-sizing: border-box;
             border-bottom: 1px solid #333333; /* 링크와 구분선 */
         }
@@ -60,10 +60,10 @@
         /* 채널명 링크 */
         .page-item-each {
             display: block; /* 링크 영역을 블록으로 만들어 전체 클릭 가능 */
-            padding: 16px;
+            padding: 12px 15px; /* 상하 여백 축소 */
             text-decoration: none; /* 밑줄 제거 */
             color: #FFFFFF;
-            font-size: 18px;
+            font-size: 16px; /* 글자 크기 약간 축소 */
             font-weight: 600;
             transition: background-color 0.2s ease-in-out; /* 부드러운 색상 변경 효과 */
         }
@@ -154,19 +154,15 @@
                     if (inputValue !== '') {
                         let searchQuery = inputValue;
 
-                        // 입력값이 URL 형식인지 확인하고, 그렇다면 ID를 추출합니다.
                         if (inputValue.startsWith('https://youtu.be/')) {
                             searchQuery = inputValue.substring(inputValue.lastIndexOf('/') + 1);
                         }
                         
-                        // 원래 href에서 재생목록 ID를 추출합니다.
                         const listId = originalHref.substring(originalHref.lastIndexOf('/') + 1);
                         
-                        // 최종 검색어(일반 텍스트 또는 추출된 ID)와 재생목록 ID를 사용하여 새 URL을 만듭니다.
                         link.href = `https://www.youtube.com/watch?v=${encodeURIComponent(searchQuery)}&list=${listId}`;
 
                     } else {
-                        // 입력창이 비워지면 원래의 href로 되돌립니다.
                         link.href = originalHref;
                     }
                 });
